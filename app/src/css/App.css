@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+}
+
+header {
+  width: 100%;
+  padding: 15px 60px;
+  background: linear-gradient(90deg, #51A0DE, #85B7DE);
+}
+
+header h1 {
+  font-size: 40px;
+  color: #EBA048;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    padding: 7px 20px;
+  }
+  header h1 {
+    font-size: 30px;
+  }
+}
