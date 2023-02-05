@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/Header.css';
 
-function App() {
+function Header() {
   return (
     <header>
       <h1>TODOs</h1>
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Header;
