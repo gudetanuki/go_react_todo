@@ -7,5 +7,6 @@
       "savePath": "~/../css",
       "savePathReplacementPairs": null
     }
-  ]
+  ],
+  "typescript.tsdk": "app/node_modules/typescript/lib"
 }

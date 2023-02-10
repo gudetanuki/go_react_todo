@@ -53,10 +53,10 @@ input[type=date]::after {
 }
 
 /* 新規追加ボタン */
-.addBtn {
+#addBtn {
   border: 1px solid #51A0DE;
   border-radius: 6px;
-  padding: 14px 43px;
+  padding: 9px 43px;
   background-color: #51A0DE;
   color: #ffffff;
   font-size: 16px;
