@@ -1,0 +1,175 @@
+openapi: "3.0.3"
+
+info:
+  title: "Sample API"
+  version: "1.0.0"
+
+paths:
+  "/":
+    get:
+      summary: "load page"
+      parameters:  
+        - name: id
+          in: path
+          required: true
+          schema: {type: number}
+          example: 1;
+        - name: title
+          in: path
+          required: true
+          schema: {type: string}
+          example: "資料提出"
+        - name: status
+          in: path
+          required: true
+          schema: {type: string}
+          example: "not_started"
+        - name: limit
+          in: path
+          required: true
+          schema: {type: string, format: date}
+          example: "2023-02-14"
+
+  "/task/add":
+    post:
+      summary: "add new task"
+      parameters:
+        - name: title
+          in: path
+          required: true
+          schema: {type: string}
+          example: "資料提出"
+        - name: limit
+          in: path
+          required: true
+          schema: {type: string, format: date}
+          example: "2023-02-14"
+      requestBody:
+          description: "追加しました"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                    title: {type: string, example: "メールを送る"}  
+                    limit: {type: string, format: date, "2023-02-28"}
+      responses:
+        "200":
+          description: "成功"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  id: {type: number, example: 1}
+                  title: {type: string, example: "メールを送る"}  
+                  status: {type: string, example: "not_started"} 
+                  limit: {type: string, format: date, "2023-02-28"}
+
+  "/task/update/title/{id}":
+    put:
+      summary: "edit title of task"
+      parameters:
+        - name: title
+          in: path
+          required: true
+          schema: {type: string}
+          example: "資料提出"
+      requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                    title: {type: string, example: "メールを送る"}  
+      responses:
+        "200":
+          description: "成功"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  title: {type: string, example: "メールを送る"}  
+
+  "/task/update/status/{id}":
+    put:
+      summary: "edit status of task"
+      parameters:
+        - name: status
+          in: path
+          required: true
+          schema: {type: string}
+          example: "not_started"
+      requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: {type: string, example: "not_started"} 
+      responses:
+        "200":
+          description: "成功"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  status: {type: string, example: "not_started"} 
+
+  "/task/update/limit/{id}":
+    put:
+      summary: "edit limit of task"
+      parameters:
+        - name: limit
+          in: path
+          required: true
+          schema: {type: string, format: date}
+          example: "2023-02-14"
+      requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  limit: {type: string, format: date, "2023-02-28"}
+      responses:
+        "200":
+          description: "成功"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  limit: {type: string, format: date, "2023-02-28"}
+
+  "/task/delete/{id}":
+    delete:
+      summary: "delete task"
+      parameters:
+        - name: title
+          in: path
+          required: true
+          schema: {type: string}
+          example: "資料提出"
+      requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                    title: {type: string, example: "メールを送る"}  
+                    limit: {type: string, format: date, "2023-02-28"}
+      responses:
+        "200":
+          description: "成功"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  id: {type: number, example: 1}
+                  title: {type: string, example: "メールを送る"}  
+                  status: {type: string, example: "not_started"} 
+                  limit: {type: string, format: date, "2023-02-28"}

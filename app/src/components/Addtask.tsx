@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Addtask.css';
+import '../assets/css/Addtask.css';
 import Inputform from './Inputform';
 import Limit from './Limit';
 import Button from './Button';
