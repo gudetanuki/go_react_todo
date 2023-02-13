@@ -1,0 +1,22 @@
+@use "./utility";
+
+$point-color: #EBA048;
+
+header {
+  width: 100%;
+  padding: 15px 60px;
+  background: linear-gradient(90deg, #51A0DE, #85B7DE);
+  h1 {
+    font-size: 40px;
+    color: $point-color;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    padding: 7px 20px;
+    h1 {
+      font-size: 30px;
+    }
+  }
+}

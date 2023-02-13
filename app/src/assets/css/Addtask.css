@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.addTask {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+input {
+  border: 1px solid #B1CBDE;
+  border-radius: 6px;
+  padding: 14px 25px;
+  background-color: #ffffff;
+  line-height: 1;
+}
+
+input[type=text] {
+  width: 600px;
+}
+
+label {
+  font-size: 16px;
+}
+
+input[type=date] {
+  margin-left: 5px;
+  position: relative;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  z-index: 1;
+}
+
+input[type=date]::after {
+  content: "";
+  background-image: url(../img/calendar_fill.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* 新規追加ボタン */
+#addBtn {
+  border: 1px solid #51A0DE;
+  border-radius: 6px;
+  padding: 9px 43px;
+  background-color: #51A0DE;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1064px) {
+  .addTask {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .addTask {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  input[type=text] {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Addtask.css.map */
